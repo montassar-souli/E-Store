@@ -1,27 +1,23 @@
-# EStore
+1- ng new E-Store --skip-tests
+2- npm i bootstrap
+configure angular.json file "build"
+            "styles": [
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],
+            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.js"]
+3- ng g c navbar --standalone
+-- add NavbarComponent to imports in app.module.ts
+-- add RouterModule to imports in navbar.components.ts
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+4-ng g c categories
+-- mkdir src/app/models
+-- touch src/app/models/category.ts
+-- add FormsModule to imports in app.module.ts(input'ngModel')
+4- ng c products
 
-## Development server
+ng g c home
+ng g c footer
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+touch product.ts

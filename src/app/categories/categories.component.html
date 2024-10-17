@@ -1,0 +1,69 @@
+<div class="container mt-4">
+  <!-- Search Bar -->
+  <div class="row mb-3">
+    <div class="col-md-8">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search categories..."
+        [(ngModel)]="searchText"
+        (ngModelChange)="searchCategory()"
+      />
+      <!--(change)="onChangeInput($event)"-->
+    </div>
+    <div class="col-md-4">
+      <button class="btn btn-outline-primary w-100" (click)="searchCategory()">
+        Search
+      </button>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <table class="table table-bordered table-hover text-center">
+    <thead class="table-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Category Name</th>
+        <th scope="col">Availability</th>
+        <th scope="col">Products</th>
+        <th scope="col">Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let element of listCategoryFiltred"
+        [class.table-danger]="!element.available"
+      >
+        <td>{{ element.id }}</td>
+        <td>{{ element.name }}</td>
+        <td>
+          <span *ngIf="element.available" class="badge bg-success"
+            >Available</span
+          >
+          <span *ngIf="!element.available" class="badge bg-danger"
+            >Not Available</span
+          >
+        </td>
+        <td>
+          <button
+            *ngIf="element.available"
+            class="btn btn-primary btn-sm"
+            [routerLink]="['/products/', element.id]"
+          >
+            View Products
+          </button>
+          <span *ngIf="!element.available">Catégorie non disponible</span>
+        </td>
+        <td>
+          <img
+            [src]="element.image"
+            alt="{{ element.name }} image"
+            class="img-fluid rounded"
+            height="100"
+            width="100"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
