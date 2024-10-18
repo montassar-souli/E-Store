@@ -13,6 +13,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { AddCategoryComponent } from './add-category/add-category.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AddProductComponent } from './add-product/add-product.component';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { AddProductComponent } from './add-product/add-product.component';
     NotFoundComponent,
     NotFoundComponent,
     AddProductComponent,
+    TestComponent,
   ],
   imports: [
     BrowserModule,

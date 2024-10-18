@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+/* styles.css or styles.scss */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}

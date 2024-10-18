@@ -1,11 +1,13 @@
 1- ng new E-Store --skip-tests
 2- npm i bootstrap
 configure angular.json file "build"
+
 "styles": [
 "src/styles.css",
 "node_modules/bootstrap/dist/css/bootstrap.min.css"
 ],
 "scripts": ["node_modules/bootstrap/dist/js/bootstrap.js"]
+
 3- ng g c home
 4- ng g c footer
 4- ng g c navbar --standalone
@@ -24,6 +26,10 @@ configure angular.json file "build"
 10-configure routes in app-routing.module.ts
 
 11- -- touch src/app/models/products.ts
-
-
-touch product.ts
+12- npm i @fortawesome/fontawesome-free
+configure angular.json file "build"
+"styles": [
+"src/styles.css",
+"node_modules/bootstrap/dist/css/bootstrap.min.css",
+"node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+],

@@ -1,1 +1,86 @@
-<p>add-product works!</p>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h3 class="text-center mb-4">Add New Product</h3>
+      <form [formGroup]="product" novalidate>
+        <!-- Product Name -->
+        <div class="mb-3">
+          <label for="name" class="form-label">Product Name</label>
+          <input
+            id="name"
+            formControlName="name"
+            class="form-control"
+            placeholder="Enter product name"
+            [ngClass]="{
+              'is-invalid':
+                product.get('name')!.invalid &&
+                (product.get('name')!.touched || product.get('name')!.dirty)
+            }"
+          />
+          <!-- Validation Messages -->
+          <div class="invalid-feedback" *ngIf="product.get('name')!.errors">
+            <div *ngIf="product.get('name')!.errors!['required']">
+              Name is required!
+            </div>
+            <div *ngIf="product.get('name')!.errors!['pattern']">
+              Name format is invalid!
+            </div>
+          </div>
+        </div>
+
+        <!-- Price -->
+        <div class="mb-3">
+          <label for="price" class="form-label">Price</label>
+          <input
+            id="price"
+            type="number"
+            formControlName="price"
+            class="form-control"
+            placeholder="Enter product price"
+            [ngClass]="{
+              'is-invalid':
+                product.get('price')!.invalid &&
+                (product.get('price')!.touched || product.get('price')!.dirty)
+            }"
+          />
+          <!-- Validation Message -->
+          <div class="invalid-feedback">
+            <div *ngIf="product.get('price')!.errors?.['min']">
+              Price must be a positive number!
+            </div>
+          </div>
+        </div>
+
+        <!-- Image -->
+        <div class="mb-3">
+          <label for="image" class="form-label">Image URL</label>
+          <input
+            type="file"
+            id="image"
+            formControlName="image"
+            class="form-control"
+            placeholder="Enter image URL"
+            [ngClass]="{
+              'is-invalid':
+                product.get('image')!.invalid &&
+                (product.get('image')!.touched || product.get('image')!.dirty)
+            }"
+          />
+          <!-- Validation Message -->
+          <div class="invalid-feedback">Image is required!</div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="text-center">
+          <button
+            type="submit"
+            class="btn btn-primary w-100"
+            [disabled]="product.invalid"
+          >
+            Add Product
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

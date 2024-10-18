@@ -6,6 +6,8 @@ import { ProductsComponent } from './products/products.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AddCategoryComponent } from './add-category/add-category.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { AddProductComponent } from './add-product/add-product.component';
+import { TestComponent } from './test/test.component';
 
 const routes: Routes = [
   {
@@ -34,6 +36,14 @@ const routes: Routes = [
     component: AddCategoryComponent,
   },
   {
+    path: 'product/add',
+    component: AddProductComponent,
+  },
+  {
+    path: 'test',
+    component: TestComponent,
+  },
+  {
     path: '**',
     component: NotFoundComponent,
   },
@@ -41,6 +51,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
